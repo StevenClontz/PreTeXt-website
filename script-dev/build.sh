@@ -29,6 +29,16 @@ else
 	declare PTX=${REPOS}/pretext
 fi
 
+###############
+# Prerequisites
+###############
+
+# Certain tasks are required to build everything here.  This is
+# a list of reminders, precise instructions will be elsewhere.
+
+# 1.  Building the PDF of the PreTeXt Guide requires
+#     the Libertine Serif OTF font.
+
 ############################
 # Miscellaneous Conveniences
 ############################
@@ -44,6 +54,7 @@ declare PTXPTX=${PTX}/pretext/pretext
 # Convenience locations for various directories
 
 declare EXAMPLESOUT=${STAGED}/examples
+declare DOCOUT=${STAGED}/doc
 
 ##################
 # Source Materials
@@ -52,6 +63,7 @@ declare EXAMPLESOUT=${STAGED}/examples
 # Convenience locations for various source material
 
 declare SA=${PTX}/examples/sample-article
+declare G=${PTX}/doc/guide
 
 ###############
 # Overall Setup
@@ -80,6 +92,17 @@ if [ "${1}" != "local" ] ; then
 	git checkout master
 	git pull
 fi
+
+# The PreTeXt Guide, primary documentation
+echo
+echo "BUILD: creating The Guide :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d  ${DOCOUT}/guide/html
+# PDF
+# "fancy" vertsion via a LaTeX style file given in a publisher file
+${PTXPTX} -v -o ${DOCOUT}/guide/pretext-guide.pdf -c doc -f pdf -p ${G}/publication-styled.xml ${G}/guide.xml
+# HTML
+${PTXPTX} -v -d ${DOCOUT}/guide/html -c doc -f html -p ${G}/publication.xml ${G}/guide.xml
 
 # Sample article
 echo
