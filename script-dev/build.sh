@@ -38,6 +38,16 @@ fi
 
 # 1.  Building the PDF of the PreTeXt Guide requires
 #     the Libertine Serif OTF font.
+#
+# 2.  Output formats which depend on "offline" MathJax
+#     to render LaTeX will first need to have the
+#
+#         pretext/script/mjsre/update-sre
+#
+#     script run in the pretext/script/mjsre directory of
+#     the  pretext  repository used from ${REPOS} (${PTX}).
+#     This in turn requires having  npm  for installation,
+#     and  node  for use.  These formats include EPUB and braille.
 
 ############################
 # Miscellaneous Conveniences
@@ -64,6 +74,7 @@ declare DOCOUT=${STAGED}/doc
 
 declare SA=${PTX}/examples/sample-article
 declare G=${PTX}/doc/guide
+declare ES=${PTX}/examples/epub
 
 ###############
 # Overall Setup
@@ -113,3 +124,15 @@ install -d ${EXAMPLESOUT}/sample-article/html
 ${PTXPTX} -v -c doc -f pdf -d ${EXAMPLESOUT}/sample-article -p ${SA}/publication.xml ${SA}/sample-article.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/html -p ${SA}/publication.xml ${SA}/sample-article.xml
+
+# EPUB sampler, PDF, HTML, EPUB (SVG)
+echo
+echo "BUILD: creating the EPUB Sampler :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d  ${EXAMPLESOUT}/epub-sampler/html
+# PDF
+${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.pdf -c doc -f pdf -p ${ES}/publication.xml ${ES}/epub-sampler.xml
+# HTML
+${PTXPTX} -v -d ${EXAMPLESOUT}/epub-sampler/html -c doc -f html -p ${ES}/publication.xml ${ES}/epub-sampler.xml
+# EPUB
+${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.epub -c doc -f epub-svg -p ${ES}/publication.xml ${ES}/epub-sampler.xml
