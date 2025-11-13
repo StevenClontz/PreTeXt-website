@@ -75,6 +75,7 @@ declare DOCOUT=${STAGED}/doc
 declare SA=${PTX}/examples/sample-article
 declare G=${PTX}/doc/guide
 declare ES=${PTX}/examples/epub
+declare SLP=${PTX}/schema
 
 ###############
 # Overall Setup
@@ -104,6 +105,10 @@ if [ "${1}" != "local" ] ; then
 	git pull
 fi
 
+###############
+# Documentation
+###############
+
 # The PreTeXt Guide, primary documentation
 echo
 echo "BUILD: creating The Guide :BUILD"
@@ -114,6 +119,19 @@ install -d  ${DOCOUT}/guide/html
 ${PTXPTX} -v -o ${DOCOUT}/guide/pretext-guide.pdf -c doc -f pdf -p ${G}/publication-styled.xml ${G}/guide.xml
 # HTML
 ${PTXPTX} -v -d ${DOCOUT}/guide/html -c doc -f html -p ${G}/publication.xml ${G}/guide.xml
+
+echo
+echo "BUILD: creating the schema literate program :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d ${DOCOUT}/schema-litprog/html
+# PDF
+${PTXPTX} -v -c doc -f pdf -d ${DOCOUT}/schema-litprog -p ${SLP}/publication.xml ${SLP}/pretext.xml
+# HTML
+${PTXPTX} -v -c doc -f html -d ${DOCOUT}/schema-litprog/html -p ${SLP}/publication.xml ${SLP}/pretext.xml
+
+##########
+# Examples
+##########
 
 # Sample article
 echo
