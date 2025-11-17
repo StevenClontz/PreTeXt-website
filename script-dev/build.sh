@@ -66,6 +66,11 @@ declare PTXPTX=${PTX}/pretext/pretext
 declare EXAMPLESOUT=${STAGED}/examples
 declare DOCOUT=${STAGED}/doc
 
+# variant destinations for sample book versions
+declare SBNP=noparts
+declare SBDE=decorative
+declare SBST=structural
+
 ##################
 # Source Materials
 ##################
@@ -73,6 +78,7 @@ declare DOCOUT=${STAGED}/doc
 # Convenience locations for various source material
 
 declare SA=${PTX}/examples/sample-article
+declare SB=${PTX}/examples/sample-book
 declare G=${PTX}/doc/guide
 declare ES=${PTX}/examples/epub
 declare SLP=${PTX}/schema
@@ -104,6 +110,7 @@ if [ "${1}" != "local" ] ; then
 	git checkout master
 	git pull
 fi
+
 
 ###############
 # Documentation
@@ -142,6 +149,25 @@ install -d ${EXAMPLESOUT}/sample-article/html
 ${PTXPTX} -v -c doc -f pdf -d ${EXAMPLESOUT}/sample-article -p ${SA}/publication.xml ${SA}/sample-article.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/html -p ${SA}/publication.xml ${SA}/sample-article.xml
+
+# Sample book
+echo
+echo "BUILD: creating sample book :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# Tests/illustrates: no parts, decorative parts, structural parts
+
+# no parts
+install -d ${EXAMPLESOUT}/sample-book/${SBNP}/html
+${PTXPTX} -v -f pdf  -c doc -p ${SB}/publication-noparts.xml -d ${EXAMPLESOUT}/sample-book/${SBNP}      ${SB}/sample-book.xml
+${PTXPTX} -v -f html -c doc -p ${SB}/publication-noparts.xml -d ${EXAMPLESOUT}/sample-book/${SBNP}/html ${SB}/sample-book.xml
+# decorative
+install -d ${EXAMPLESOUT}/sample-book/${SBDE}/html
+${PTXPTX} -v -f pdf  -c doc -p ${SB}/publication-decorative.xml -d ${EXAMPLESOUT}/sample-book/${SBDE}      ${SB}/sample-book-parts.xml
+${PTXPTX} -v -f html -c doc -p ${SB}/publication-decorative.xml -d ${EXAMPLESOUT}/sample-book/${SBDE}/html ${SB}/sample-book-parts.xml
+# structural
+install -d ${EXAMPLESOUT}/sample-book/${SBST}/html
+${PTXPTX} -v -f pdf  -c doc -p ${SB}/publication-structural.xml -d ${EXAMPLESOUT}/sample-book/${SBST}      ${SB}/sample-book-parts.xml
+${PTXPTX} -v -f html -c doc -p ${SB}/publication-structural.xml -d ${EXAMPLESOUT}/sample-book/${SBST}/html ${SB}/sample-book-parts.xml
 
 # EPUB sampler, PDF, HTML, EPUB (SVG)
 echo
