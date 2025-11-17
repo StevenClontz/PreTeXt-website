@@ -198,6 +198,34 @@ install -d ${EXAMPLESOUT}/sample-book/${SBST}/html
 ${PTXPTX} -v -f pdf  -c doc -p ${SB}/publication-structural.xml -d ${EXAMPLESOUT}/sample-book/${SBST}      ${SB}/sample-book-parts.xml
 ${PTXPTX} -v -f html -c doc -p ${SB}/publication-structural.xml -d ${EXAMPLESOUT}/sample-book/${SBST}/html ${SB}/sample-book-parts.xml
 
+# Sample book, as HTML, with "View Source" annotations
+echo
+echo "BUILD: creating annotated sample book :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+# place to work on formatting
+install -d ${SCRATCH}/sb/annotated
+cd ${SCRATCH}/sb/annotated
+# copy creates a "sample-book" directory
+cp -a ${SB} .
+# Pretty-print will just massage top-level XML files
+# from source, and then will drop them in this
+# scratch location *overwriting* parts of copy above
+# We need to cover subdirectories with source material
+${LTL}/ltol.py xml_pp ${SB}           ./sample-book
+${LTL}/ltol.py xml_pp ${SB}/exercises ./sample-book/exercises
+${LTL}/ltol.py xml_pp ${SB}/sage      ./sample-book/sage
+# text files being included, just copy
+cp ${SB}/code/symmetric-group-8.sage  ./sample-book/code
+cp ${SB}/tikz/cyclic-roots-unity.tex  ./sample-book/tikz
+# location in final tree
+install -d ${EXAMPLESOUT}/sample-book/annotated
+# reset, then drop down one more level
+cd -
+cd ${SCRATCH}/sb/annotated/sample-book
+${PTXPTX} -v -c doc -f html -x debug.html.annotate yes -d ${EXAMPLESOUT}/sample-book/annotated -p publication-structural.xml sample-book-parts.xml
+cd -
+
 # EPUB sampler, PDF, HTML, EPUB (SVG)
 echo
 echo "BUILD: creating the EPUB Sampler :BUILD"
