@@ -90,6 +90,9 @@ declare SLP=${PTX}/schema
 # Create staging area (especially since it should be regularly trashed)
 install -d ${STAGED}
 
+# Scratch directory for formatting source material
+install -d ${SCRATCH}
+
 ##############
 # Repositories
 ##############

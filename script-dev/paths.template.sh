@@ -16,6 +16,7 @@
 #
 # 2025-11-12 Fresh start
 # 2025-11-12 REPOS, STAGED, LOCALPTX
+# 2025-11-17 SCRATCH
 
 
 # Various repositories are involved in building material
@@ -30,6 +31,12 @@ declare REPOS=${HOME}/path/to/repos
 # of /tmp.  You may want to periodically clean it out (remove 
 # it), before too much cruft buiilds iup.
 declare STAGED=/tmp/path/to/staged
+
+# PreTeXt source for annotated versions must be formatted first,
+# so the "View Source" annotations are easier to read.  We need
+# a "scratch" directory where the source can be manipulated by
+# tools from the "LaTeX-to-LaTeX' tool
+declare SCRATCH=/tmp/path/to/scratch
 
 # The build script may be run (optionally) with local,
 # non-public, versions of some of the inputs.  Declare
