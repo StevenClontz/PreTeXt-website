@@ -54,8 +54,11 @@ fi
 ############################
 
 # pretext/pretext executable
-
 declare PTXPTX=${PTX}/pretext/pretext
+
+# PreTeXt formatting repository
+declare LTL=${REPOS}/LaTeX3LaTeX
+
 
 #####################
 # Directory Locations
@@ -101,6 +104,7 @@ install -d ${SCRATCH}
 # locally.  We catalog them here, by their GitHub names
 
 # 1.  PreTextBook/pretext
+# 2.  davidfarmer/LaTeX3LaTeX
 
 # PreTeXt, master branch of *public* repository
 # Do not touch a local version, it might be in 
@@ -152,6 +156,28 @@ install -d ${EXAMPLESOUT}/sample-article/html
 ${PTXPTX} -v -c doc -f pdf -d ${EXAMPLESOUT}/sample-article -p ${SA}/publication.xml ${SA}/sample-article.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/html -p ${SA}/publication.xml ${SA}/sample-article.xml
+
+# Sample article, HTML, with "View Source" annotations
+echo
+echo "BUILD: creating annotated sample article :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+# place to work on formatting
+install -d ${SCRATCH}/sa/annotated
+cd ${SCRATCH}/sa/annotated
+# copy creates a "sample-article" directory
+cp -a ${SA} .
+# Pretty-print will just massage top-level XML files
+# from source, and then will drop them in this
+# scratch location *overwriting* parts of copy above
+${LTL}/ltol.py xml_pp ${SA} ./sample-article
+# location in final tree
+install -d ${EXAMPLESOUT}/sample-article/annotated
+# reset, then drop down one more level
+cd -
+cd ${SCRATCH}/sa/annotated/sample-article
+${PTXPTX} -v -c doc -f html -x debug.html.annotate yes -d ${EXAMPLESOUT}/sample-article/annotated -p publication.xml sample-article.xml
+cd -
 
 # Sample book
 echo
