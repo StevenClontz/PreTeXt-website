@@ -48,6 +48,16 @@ fi
 #     the  pretext  repository used from ${REPOS} (${PTX}).
 #     This in turn requires having  npm  for installation,
 #     and  node  for use.  These formats include EPUB and braille.
+#
+# 3.  For the examples of the sample article as HTML output
+#     with different themes, as a one-time setup step, run
+#
+#         npm install
+#
+#     in the pretext/script/cssbuilder directory of
+#     the  pretext  repository used from ${REPOS} (${PTX}).
+#     This in turn requires having  npm  for installation,
+#     and  node  for use.
 
 ############################
 # Miscellaneous Conveniences
@@ -118,7 +128,6 @@ if [ "${1}" != "local" ] ; then
 	git pull
 fi
 
-
 ###############
 # Documentation
 ###############
@@ -156,6 +165,20 @@ install -d ${EXAMPLESOUT}/sample-article/html
 ${PTXPTX} -v -c doc -f pdf -d ${EXAMPLESOUT}/sample-article -p ${SA}/publication.xml ${SA}/sample-article.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/html -p ${SA}/publication.xml ${SA}/sample-article.xml
+
+echo
+echo "BUILD: creating sample article with themes :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+
+# Available themes for HTML builds
+THEMES=("default-modern" "tacoma" "greeley" "boulder" "salem" "denver")
+
+# Loop over themes, building sample article into different directories
+for THEME in "${THEMES[@]}"; do
+    echo "## Sample Article with $THEME theme"
+    install -d ${EXAMPLESOUT}/sample-article/${THEME}
+    ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/${THEME} -x debug.html.theme-name ${THEME} -p ${SA}/publication.xml ${SA}/sample-article.xml
+done
 
 # Sample article, HTML, with "View Source" annotations
 echo
