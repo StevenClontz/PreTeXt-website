@@ -92,6 +92,7 @@ declare SBST=structural
 
 declare SA=${PTX}/examples/sample-article
 declare SB=${PTX}/examples/sample-book
+declare WW=${PTX}/examples/webwork/sample-chapter
 declare G=${PTX}/doc/guide
 declare ES=${PTX}/examples/epub
 declare SLP=${PTX}/schema
@@ -248,6 +249,26 @@ cd -
 cd ${SCRATCH}/sb/annotated/sample-book
 ${PTXPTX} -v -c doc -f html -x debug.html.annotate yes -d ${EXAMPLESOUT}/sample-book/annotated -p publication-structural.xml sample-book-parts.xml
 cd -
+
+# WebWork sample chapter
+echo
+echo "BUILD: creating WW sample chapter :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+# Extract static representations and images from server
+# -a will abort on bad xml produced by webwork (especially)
+${PTXPTX} -v -a -c webwork -p ${WW}/publisher/publication.xml ${WW}/sample-chapter.ptx
+
+# PDF
+install -d ${EXAMPLESOUT}/webwork/sample-chapter
+${PTXPTX} -v -c doc -f pdf -p ${WW}/publisher/publication.xml -d ${EXAMPLESOUT}/webwork/sample-chapter/ ${WW}/sample-chapter.ptx
+# HTML
+# Publisher file sets all problems to be dynamic, for demonstration purposes
+install -d ${EXAMPLESOUT}/webwork/sample-chapter/html
+${PTXPTX} -v -c doc -f html -p ${WW}/publisher/publication.xml -d ${EXAMPLESOUT}/webwork/sample-chapter/html ${WW}/sample-chapter.ptx
+# Problem archive (PG, set definitions, set headers)
+# -z argument makes a "compressed tar archive"
+install -d ${EXAMPLESOUT}/webwork/sample-chapter
+${PTXPTX} -v -c doc -f webwork-sets -p ${WW}/publisher/publication.xml -z -d ${EXAMPLESOUT}/webwork/sample-chapter ${WW}/sample-chapter.ptx
 
 # EPUB sampler, PDF, HTML, EPUB (SVG)
 echo
