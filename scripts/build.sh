@@ -17,10 +17,10 @@
 DIR="$(dirname "$0")"
 . ${DIR}/paths.sh
 
-# Default is to use public repositories, for the best fidelity.  
-# But sometimes we want to test a change using the current 
-# version/branch of some repositoreies, principally pretext itself.  
-# So we allow a single command line option "local", which if present 
+# Default is to use public repositories, for the best fidelity
+# But sometimes we want to test a change using the current
+# version/branch of some repositoreies, principally pretext itself.
+# So we allow a single command line option "local", which if present
 # will adjust some components of the build.
 
 if [ "${1}" = "local" ] ; then
@@ -111,14 +111,14 @@ install -d ${SCRATCH}
 # Repositories
 ##############
 
-# Various repositories are assumed to live under ${REPOS} 
+# Various repositories are assumed to live under ${REPOS}
 # locally.  We catalog them here, by their GitHub names
 
 # 1.  PreTextBook/pretext
 # 2.  davidfarmer/LaTeX3LaTeX
 
 # PreTeXt, master branch of *public* repository
-# Do not touch a local version, it might be in 
+# Do not touch a local version, it might be in
 # any sort of state for testing purposes
 if [ "${1}" != "local" ] ; then
 	echo
