@@ -19,7 +19,7 @@ DIR="$(dirname "$0")"
 
 # Default is to use public repositories, for the best fidelity
 # But sometimes we want to test a change using the current
-# version/branch of some repositoreies, principally pretext itself.
+# version/branch of some repositories, principally pretext itself.
 # So we allow a single command line option "local", which if present
 # will adjust some components of the build.
 
@@ -58,6 +58,14 @@ fi
 #     the  pretext  repository used from ${REPOS} (${PTX}).
 #     This in turn requires having  npm  for installation,
 #     and  node  for use.
+#
+# 4.  The Pelican static site generator is used to build
+#     the landing pages.  This requires having Python
+#     and Pelican installed.  Run
+#
+#				 pip install pelican[markdown]
+#
+# 	  to install Pelican via pip.
 
 ############################
 # Miscellaneous Conveniences
@@ -281,3 +289,15 @@ ${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.pdf -c doc -f pdf -p ${
 ${PTXPTX} -v -d ${EXAMPLESOUT}/epub-sampler/html -c doc -f html -p ${ES}/publication.xml ${ES}/epub-sampler.xml
 # EPUB
 ${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.epub -c doc -f epub-svg -p ${ES}/publication.xml ${ES}/epub-sampler.xml
+
+#################
+# Landing pages #
+#################
+
+# Build the landing pages from the site directory using Pelican
+# This should be run from the `site`` directory of the `pretext-website` repository
+echo
+echo "BUILD: creating landing pages with Pelican :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+cd ${DIR}/../site
+pelican content -o ${STAGED} -s pelican_settings.py
