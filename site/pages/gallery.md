@@ -1,4 +1,4 @@
-Title: Gallery and Catalog of PreTeXt Projects
+title: Gallery and Catalog of PreTeXt Projects
 URL:
 save_as: gallery.html
 

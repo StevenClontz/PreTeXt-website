@@ -1,4 +1,4 @@
-Title: Examples
+title: Examples
 URL:
 save_as: examples.html
 

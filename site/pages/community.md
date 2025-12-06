@@ -1,4 +1,4 @@
-Title: The PreTeXt Community
+title: The PreTeXt Community
 URL:
 save_as: community.html
 

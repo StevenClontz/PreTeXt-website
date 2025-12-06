@@ -17,6 +17,7 @@
 DIR="$(dirname "$0")"
 . ${DIR}/paths.sh
 
+echo ${DIR}
 # Default is to use public repositories, for the best fidelity
 # But sometimes we want to test a change using the current
 # version/branch of some repositories, principally pretext itself.
@@ -63,7 +64,7 @@ fi
 #     the landing pages.  This requires having Python
 #     and Pelican installed.  Run
 #
-#				 pip install pelican[markdown]
+#	      pip install pelican[markdown]
 #
 # 	  to install Pelican via pip.
 
@@ -104,6 +105,7 @@ declare WW=${PTX}/examples/webwork/sample-chapter
 declare G=${PTX}/doc/guide
 declare ES=${PTX}/examples/epub
 declare SLP=${PTX}/schema
+declare LANDING=${DIR}/../site
 
 ###############
 # Overall Setup
@@ -114,6 +116,18 @@ install -d ${STAGED}
 
 # Scratch directory for formatting source material
 install -d ${SCRATCH}
+
+#################
+# Landing pages #
+#################
+
+# Build the landing pages from the site directory using Pelican
+# This should be run from the `site`` directory of the `pretext-website` repository
+echo
+echo "BUILD: creating landing pages with Pelican :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+cd ${LANDING}
+pelican . -o ${STAGED} -s ./pelican_settings.py
 
 ##############
 # Repositories
@@ -290,14 +304,4 @@ ${PTXPTX} -v -d ${EXAMPLESOUT}/epub-sampler/html -c doc -f html -p ${ES}/publica
 # EPUB
 ${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.epub -c doc -f epub-svg -p ${ES}/publication.xml ${ES}/epub-sampler.xml
 
-#################
-# Landing pages #
-#################
 
-# Build the landing pages from the site directory using Pelican
-# This should be run from the `site`` directory of the `pretext-website` repository
-echo
-echo "BUILD: creating landing pages with Pelican :BUILD"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-cd ${DIR}/../site
-pelican content -o ${STAGED} -s pelican_settings.py

@@ -1,4 +1,4 @@
-Title: The PreTeXt Guide
+title: The PreTeXt Guide
 URL:
 save_as: guide.html
 
