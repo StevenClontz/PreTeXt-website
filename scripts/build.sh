@@ -117,6 +117,18 @@ install -d ${STAGED}
 # Scratch directory for formatting source material
 install -d ${SCRATCH}
 
+###########################
+# Virtual Environment check
+###########################
+
+# RAB has Pelican installed in a virtual environment, and
+# frequently forgets to switch there.  This is a hard stop.
+
+if ! command -v pelican >/dev/null 2>&1; then
+    echo "ERROR: Pelican executable not found.  Did you forget to use the right environment?  Script is not being executed." >&2
+    exit 1
+fi
+
 #################
 # Landing pages #
 #################
