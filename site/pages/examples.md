@@ -6,15 +6,6 @@ save_as: examples.html
 
 In the examples directory of the PreTeXt distribution there are several examples. We include output for six of them here. To see examples of actual books (and other projects), see the Gallery at the main page of this site.
 
-### Showcase Article
-
-The Showcase Article demonstrates the features of PreTeXt. It is not comprehensive, nor instructive. But you can browse it as part of evaluating PreTeXt, or as a source of ideas for your project. The source is also meant to be a demonstration and contains some comments that will help with implementation.
-
-As of 2019-04-02 this is under construction. Knowledgeable PreTeXt authors are encouraged to add examples of their favorite features.
-
-- [Showcase Article, Online](examples/showcase/html)
-- [Showcase Article, PDF](examples/showcase/pretext-showcase.pdf)
-- [Showcase Article, Source at GitHub](https://github.com/PreTeXtBook/pretext/tree/master/examples/showcase)
 
 ### Sample Book
 
