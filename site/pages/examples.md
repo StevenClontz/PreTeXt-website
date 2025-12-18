@@ -91,10 +91,3 @@ The EPUB Sampler is designed to test and stress the conversion to EPUB. As such 
 - [EPUB Sampler, Online](examples/epub-sampler/html)
 - [EPUB Sampler, PDF](examples/epub-sampler/epub-sampler.pdf)
 
-### Humanities in Action
-
-Humanities in Action showcases Jahrme Risner’s summer project in 2016, funded by the Arts, Humanities, Social Sciences Summer Research for Undergraduates program at the [University of Puget Sound](http://www.pugetsound.edu/).
-
-- [Humanities in Action, Online](examples/humanities/html)
-- [Humanities in Action, PDF](examples/humanities/hia.pdf)
-- [Humanities in Action, Source at GitHub](https://github.com/PreTeXtBook/pretext/tree/master/examples/humanities)
