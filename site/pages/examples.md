@@ -11,7 +11,7 @@ In the examples directory of the PreTeXt distribution there are several examples
 
 The sample-book is an example of how a book-length document can be authored and organized. It may have a run of chapters, or be structured into parts. The parts can be “structural”, where numbering of chapters restarts in each part, or “decorative”, where chapters are numbered consecutively throughout the book without regard for the parts.
 
-The first version below has only chapters, and no parts. We have used it as an example of how to generate a Solution Manual as a PDF that could be distributed to instructors.
+The first version below has only chapters, and no parts.
 
 The final chapter contains interactive exercises and programming environments. There are powered by Javascript we get from Runestone Services. A slightly modified build will make an even more interactive version when hosted at [Runestone Academy](https://runestone.academy/) on a dedicated (no-cost) server there. This work is in-progress as of 2022-05-31 and the code and markup may evolve. The source for this is the only documentation now.
 
@@ -19,7 +19,6 @@ Chapters Only:
 
 - [Sample Book, Online](examples/sample-book/noparts/html)
 - [Sample Book, PDF](examples/sample-book/noparts/sample-book.pdf)
-- [Sample Book Solution Manual, PDF](examples/sample-book/noparts/sample-book-solutions-manual.pdf)
 
 Structural Parts:
 
