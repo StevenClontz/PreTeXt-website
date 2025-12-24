@@ -39,12 +39,6 @@ While the PreTeXt Guide is evolving, the sample article tries to contain one exa
 
 Look for the [regularly updated sample article](https://pretextbook.org/examples.html#sample-article) in the middle of the [Examples](https://pretextbook.org/examples.html) page next door. You will see both HTML and PDF output there, along with a link to the source. And look for a special version of the online output that is annotated with pieces of the PreTeXt source. Of course, there is a copy of the source in the PreTeXt distribution in the examples/sample-article directory.
 
-### Showcase Article
-
-Strictly speaking, ths is not documentation, but if you like working off examples, it could be useful.
-
-Look for the [regularly updated Showcase Article](https://pretextbook.org/examples.html#showcase) in the middle of the [Examples](https://pretextbook.org/examples.html) page next door. You will see both HTML and PDF output there, along with a link to the source. Of course, there is a copy of the source in the PreTeXt distribution in the examples/showcase directory.
-
 ### RELAX-NG Schema
 
 A [RELAX-NG Schema](https://en.wikipedia.org/wiki/RELAX_NG) is a formal specification of the tags and attributes of an XML vocabulary, and the relationships among them. So this is the very heart of PreTeXt, as everything else begins here. You can read the documented version, find various versions in the [schema](https://github.com/PreTeXtBook/pretext/tree/master/schema/) directory, or use the convenient online browsing interface listed third below.
