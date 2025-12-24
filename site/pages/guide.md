@@ -55,14 +55,3 @@ A [RELAX-NG Schema](https://en.wikipedia.org/wiki/RELAX_NG) is a formal specific
 - [RELAX-NG, Compact Syntax](https://github.com/PreTeXtBook/pretext/tree/master/schema/pretext.rnc)
 - [W3C XSD Syntax](https://github.com/PreTeXtBook/pretext/tree/master/schema/pretext.xsd)
 
-### Git for Authors, by Rob Beezer and David Farmer
-
-Writing a book without revision control is like driving a car without a seatbelt. When something bad happens, the damage will be lessened. And more importantly and positively, git allows _anyone_ to easily contribute suggestions or corrections to your writing, if you host your source on [GitHub](https://github.com/).
-
-The power of git comes with a steep learning curve. We hope this book helps, and especially since it is illustrated with examples that will make sense to authors, and stays away from the aspects of git designed specifically for writing software. Of course, PreTeXt source works well within git, by design.
-
-Hosted on GitHub, naturally. Send us a pull request.
-
-- [Git for Authors, Online](https://pretextbook.org/gfa/html/)
-- [Git for Authors, PDF](https://pretextbook.org/gfa/git-for-authors.pdf)
-- [Git for Authors, GitHub Site](https://github.com/BooksHTML/gfa)
