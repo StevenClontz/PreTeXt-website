@@ -6,7 +6,9 @@ PreTeXt is an authoring and publishing system for authors of textbooks, research
 
 The best of DocBook, LaTeX, and HTML.
 
-Outputs: print, PDF, web, EPUB, Jupyter Notebooks, braille, …
+Outputs: print, PDF, web, EPUB, slideshows, Jupyter Notebooks, braille, …
+
+Open Source: GPL license
 
 
 ### Gallery and Catalog
@@ -17,15 +19,16 @@ The [Catalog](https://pretextbook.org/catalog.html) is a comprehensive list of P
 
 ### Starting Out
 
-Reasonably complete documentation is available off the [Documentation](https://pretextbook.org/documentation.html) page. Start with the [PreTeXt Guide](https://pretextbook.org/doc/guide/html/), and specifically, the [PreTeXt-CLI](https://pretextbook.org/doc/guide/html/quickstart-example.html) is the best tool to begin with.
+The [Documentation page](https://pretextbook.org/documentation.html) has information on Getting Started, the full documentation (The PreTeXt Guide) and additional resources.
 
 ### Community
 
-Authors, publishers, readers, and developers congregate on Google Groups (in addition to GitHub issues). The support forum is the easiest, quickest, most accurate way to get help from experienced authors, publishers and developers, even if you are just starting out, and have only read the [PreTeXt Guide](https://pretextbook.org/documentation.html) once.
+Authors, publishers, readers, and developers congregate on Google Groups (in addition to GitHub issues once discussions are resolved). The support forum is the easiest, quickest, most accurate way to get help from experienced authors, publishers and developers, even if you are just starting out, and have only read the [PreTeXt Guide](https://pretextbook.org/documentation.html) once.  Every PreTeXt author should subscribe to the announcements forum since changes and new features are broadcast there.
 
 - Support forum/mailing-list: [pretext-support](https://groups.google.com/forum/#!forum/pretext-support)
 - Announcements only, low-volume: [pretext-announce](https://groups.google.com/forum/#!forum/pretext-announce)
 - Feature discussions and implementation: [pretext-dev](https://groups.google.com/forum/#!forum/pretext-dev)
+- Accessibility discussions: [pretext-a11y](https://groups.google.com/forum/#!forum/pretext-a11y)
 
 Connect with the [#PreTeXtGang](https://twitter.com/hashtag/PreTeXtGang) on [Twitter](https://twitter.com/PreTeXtBook) or [Mastodon](https://fosstodon.org/@PreTeXt).
 
@@ -33,18 +36,5 @@ The inactive [mathbook-xml-support](https://groups.google.com/forum/?fromgroups#
 
 ### Code
 
-If you would like to contribute to PreTeXt, then [fork](https://github.com/PreTeXtBook/pretext/fork) the [repository](https://github.com/PreTeXtBook/pretext) at GitHub (GPL license). (None of this is necessary when you use the PreTeXt-CLI.)
-
-OR, install git on your system, then at a command line:
-```
-git clone https://github.com/PreTeXtBook/pretext.git
-cd pretext
-```
-
-And then it is easy to update, and you should do this regularly (daily):
-```
-git pull
-```
-
-You can download a [zip file](https://github.com/PreTeXtBook/pretext/archive/refs/heads/master.zip) for initial experiments, but it will very quickly become out-of-date, so this is not recommended. Take the time to setup and become comfortable with “pulling” as described above.
+If you would like to contribute to PreTeXt, then [fork](https://github.com/PreTeXtBook/pretext/fork) the [main PreTeXt repository](https://github.com/PreTeXtBook/pretext) at GitHub (GPL license), or associated projects at the [PreTeXt Organization](https://github.com/PreTeXtBook).
 
