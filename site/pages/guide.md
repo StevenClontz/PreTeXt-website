@@ -16,9 +16,9 @@ The PreTeXt Guide is the very best place to learn about the PreTeXt vocabulary a
 - [The PreTeXt Guide, PDF](https://pretextbook.org/doc/guide/pretext-guide.pdf)
 - [The PreTeXt Guide, Source](https://github.com/PreTeXtBook/pretext/tree/master/doc/guide)
 
-### Quick Start
+### Getting Started
 
-If you are very impatient, there are minimal instructions at the [Quickstart](https://pretextbook.org/quickstart.html) page.
+Begin with the [Introduction](https://pretextbook.org/doc/guide/html/part-introduction.html) to [The PreTeXt Guide](https://pretextbook.org/doc/guide/html).
 
 [Démarrer avec PreTeXt](https://juliengiol.github.io/dap) est un guide de démarrage rapide en Français pour Mac et Windows.
 
