@@ -22,13 +22,6 @@ If you are very impatient, there are minimal instructions at the [Quickstart](ht
 
 [Démarrer avec PreTeXt](https://juliengiol.github.io/dap) est un guide de démarrage rapide en Français pour Mac et Windows.
 
-### Quick Reference
-
-“quickrefs” are short collections of reminders and examples to consult for details of constructions you’ve forgotten how to do exactly. They are meant to be printed onto a single sheet of paper (possibly two-sided).
-
-- [PreTeXt Authoring Quick Reference](https://pretextbook.org/doc/quickref/quickref-pretext.pdf), Tom Judson, et alia.
-- [PreTeXt Command Line Interface (CLI) Quick Reference](https://pretextbook.org/doc/quickref/quickref-cli.pdf), Oscar Levin, Tom Judson, et alia.
-
 ### Sample Article
 
 While the PreTeXt Guide is evolving, the sample article tries to contain one example of everything, along with some commentary about use. So it can be used for testing and as a substitute for real documentation. But it is kept up-to-date so is always an accurate reflection of current behavior. So while it can look like a real mess, you can still learn from it.
