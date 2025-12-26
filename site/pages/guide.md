@@ -29,10 +29,6 @@ If you are very impatient, there are minimal instructions at the [Quickstart](ht
 - [PreTeXt Authoring Quick Reference](https://pretextbook.org/doc/quickref/quickref-pretext.pdf), Tom Judson, et alia.
 - [PreTeXt Command Line Interface (CLI) Quick Reference](https://pretextbook.org/doc/quickref/quickref-cli.pdf), Oscar Levin, Tom Judson, et alia.
 
-### Video Quick Starts
-
-Or, see the videos, courtesy of Karl-Dieter Crisman in the [Getting Started Videos](https://pretextbook.org/documentation.html#getting-started-videos) section at the bottom of this page. For Linux/SageMathCloud, Mac, and Windows, these will take you from zero, to completing your first project, in under 30 minutes.
-
 ### Sample Article
 
 While the PreTeXt Guide is evolving, the sample article tries to contain one example of everything, along with some commentary about use. So it can be used for testing and as a substitute for real documentation. But it is kept up-to-date so is always an accurate reflection of current behavior. So while it can look like a real mess, you can still learn from it.
