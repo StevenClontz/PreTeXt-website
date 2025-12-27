@@ -30,6 +30,13 @@ else
 	declare PTX=${REPOS}/pretext
 fi
 
+# When debugging changes, leave the local temporary directories
+# around for inspection.  See use at the end of the script.
+# DEBUG=1 sets the variable to a non-empty string,
+#         debugging on, directories remain
+# DEBUG=  leaves the variable unset, and directories get cleaned up
+DEBUG=1
+
 ###############
 # Prerequisites
 ###############
@@ -67,6 +74,26 @@ fi
 #	      pip install pelican[markdown]
 #
 # 	  to install Pelican via pip.
+
+#######################
+# Temporary Directories
+#######################
+
+# Customized temporary directories
+# SCRATCH is a place to format source for annotated versions
+# STAGED holds the entire website before rsyn'ing to server
+# ToDo: maybe /tmp is not portable?
+
+# PreTeXt source for annotated versions must be formatted first,
+# so the "View Source" annotations are easier to read.  We need
+# a "scratch" directory where the source can be manipulated by
+# tools from the "LaTeX-to-LaTeX' tool
+SCRATCH=$(mktemp -d "${TMPDIR:-/tmp}/scratch.XXXXXXXX")
+
+# The build script make a temporary copy of all the material that
+# belongs on the website, then moves it to the website  host proper.
+STAGED=$(mktemp -d "${TMPDIR:-/tmp}/staged.XXXXXXXX")
+
 
 ############################
 # Miscellaneous Conveniences
@@ -317,3 +344,19 @@ ${PTXPTX} -v -d ${EXAMPLESOUT}/epub-sampler/html -c doc -f html -p ${ES}/publica
 ${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.epub -c doc -f epub-svg -p ${ES}/publication.xml ${ES}/epub-sampler.xml
 
 
+####################
+# Wrapup and Cleanup
+####################
+
+echo
+echo "Build script complete"
+
+# DEBUG unset is empty string, test (-z) is true, remove temp directories
+if [[ -z "${DEBUG:-}" ]]; then
+    rm -rf ${STAGED} ${SCRATCH}
+else
+	echo "Site staging directory:" ${STAGED}
+    echo "Scratch formatting directory:" ${SCRATCH}
+fi
+
+exit 0
