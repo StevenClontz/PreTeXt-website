@@ -344,6 +344,30 @@ ${PTXPTX} -v -d ${EXAMPLESOUT}/epub-sampler/html -c doc -f html -p ${ES}/publica
 ${PTXPTX} -v -o ${EXAMPLESOUT}/epub-sampler/epub-sampler.epub -c doc -f epub-svg -p ${ES}/publication.xml ${ES}/epub-sampler.xml
 
 
+############
+# Rsync Site
+############
+
+# See http://everythinglinux.org/rsync/
+#   removed: --times --perms --links
+
+declare RSYNC="rsync --verbose  --progress --stats --compress --rsh=/usr/bin/ssh --recursive --delete --exclude=beta"
+
+if [ "${1}" != "local" ] ; then
+	echo
+	echo "BUILD: running rsyncs, will need  utmost@utmost.aimath.org  password... :BUILD"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	echo
+	echo "BUILD: rsync entire website :BUILD"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	# "notify-send" only works on Linux
+	# printf "\a" is portable, but a bit unreliable
+	notify-send "PreTeXt build script commplete.  Waiting for rsync password..." --urgency=critical
+	${RSYNC} ${STAGED}/*  utmost@pretextbook.org:/home/utmost/www/pretextbook.org/htdocs/beta/test-site
+	# looks good for use with live version
+	# ${RSYNC} ${STAGED}/*  utmost@pretextbook.org:/home/utmost/www/pretextbook.org/htdocs
+fi
+
 ####################
 # Wrapup and Cleanup
 ####################
