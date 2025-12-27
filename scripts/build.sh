@@ -156,6 +156,11 @@ if ! command -v pelican >/dev/null 2>&1; then
     exit 1
 fi
 
+# N.B. if you only want to build the site's web pages for testing
+# purposes and local viewing, then uncomment the "exit" command below
+# to prevent a lot of wating around (and avoid a lot of configuration)
+# exit 0
+
 #################
 # Landing pages #
 #################
