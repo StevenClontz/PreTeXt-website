@@ -222,6 +222,20 @@ echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd ${LANDING}
 pelican . -o ${STAGED} -s ./pelican_settings.py
 
+# Catalog Frame/Page
+echo
+echo "BUILD: creating PreTeXt Catalog page :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d ${STAGED}/frames
+xsltproc -o ${STAGED}/frames/catalog-frame.html -xinclude ${PP}/xsl/projects-html.xsl ${PP}/src/projects.xml
+
+# Gallery Frame/Page
+echo
+echo "BUILD: creating PreTeXt Gallery page :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d ${STAGED}/frames
+xsltproc -o ${STAGED}/frames/gallery-frame.html -xinclude ${PP}/xsl/gallery-html.xsl ${PP}/src/projects.xml
+
 # N.B. if you only want to build the site's web pages for testing
 # purposes and local viewing, then uncomment the "exit" command below
 # to prevent a lot of wating around (and avoid a lot of configuration)
