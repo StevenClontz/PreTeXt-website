@@ -104,6 +104,7 @@ header.header {
     color: #FFF;
     font: normal 1.4em monospace, sans-serif;
     margin-right: 10px;
+    text-align: right;
 }
 
 .navbar ul {
@@ -129,6 +130,39 @@ header.header {
     color: hsl(0, 0%, 73%);
     text-decoration: none;
     background-color: #444;
+}
+
+/* Hamburger menu button */
+.navbar-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    align-self: center;
+}
+
+.navbar-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #FFF;
+    margin: 5px 0;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+
+/* Clever display of hamburger menu as an X */
+.navbar-toggle.active span:nth-child(1) {
+    transform: rotate(-45deg) translate(-10px, 10px);
+}
+
+.navbar-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle.active span:nth-child(3) {
+    transform: rotate(45deg) translate(-8px, -8px);
 }
 
 /* path */
@@ -203,5 +237,54 @@ header.header {
         width: 100%;
         padding: 30px 3%;
         margin: 0;
+    }
+
+    /* Keep header compact and prepare for absolute menu positioning */
+    header.header {
+        position: relative;
+        display:flex;
+        justify-content: space-between;
+    }
+
+    .navbar-toggle {
+        display: inline-flex;
+    }
+
+    /* Dropdown overlays content instead of expanding header */
+    .navbar {
+        position: absolute;
+        top: 100%; /* directly below the header */
+        left: 0;
+        right: 0;
+        width: 100%;
+        background: hsl(60, 2%, 13%);
+        box-shadow: 0 6px 16px rgba(0,0,0,0.3);
+        border-top: 1px solid #444;
+        z-index: 1000;
+
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-out;
+        text-align: left;
+    }
+
+    .navbar.active {
+        max-height: 60vh; /* allow scrolling when tall */
+        overflow-y: auto;
+    }
+
+    .navbar ul {
+        width: 100%;
+    }
+
+    .navbar li {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #444;
+    }
+
+    .navbar a {
+        display: block;
+        padding: 12px 15px;
     }
 }
