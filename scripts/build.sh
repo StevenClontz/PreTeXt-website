@@ -112,6 +112,9 @@ declare PTXPTX=${PTX}/pretext/pretext
 # PreTeXt formatting repository
 declare LTL=${REPOS}/LaTeX3LaTeX
 
+# PreTeXt Projects repository
+declare PP=${REPOS}/pretext-projects
+
 
 #####################
 # Directory Locations
@@ -193,6 +196,17 @@ if [ "${1}" != "local" ] ; then
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	cd ${LTL}
 	git checkout main
+	git pull
+fi
+
+# PreTeXt Projects repository
+# Data and tools for Catalog and Gallery
+if [ "${1}" != "local" ] ; then
+	echo
+	echo "BUILD: PreTeXt Projects repository update :BUILD"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	cd ${PP}
+	git checkout master
 	git pull
 fi
 
