@@ -202,6 +202,17 @@ if [ "${1}" != "local" ] ; then
 	git pull
 fi
 
+# LaTeX3LaTeX formatter repository
+# To help creating annotated versions
+if [ "${1}" != "local" ] ; then
+	echo
+	echo "BUILD: LaTeX3LaTeX formatter repository update :BUILD"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	cd ${LTL}
+	git checkout main
+	git pull
+fi
+
 ###############
 # Documentation
 ###############
