@@ -41,6 +41,13 @@ DEBUG=1
 # Prerequisites
 ###############
 
+# Certain system executables are presumed:
+#   install
+#   xsltproc
+#   git
+#   python
+#   notify-send
+
 # Certain tasks are required to build everything here.  This is
 # a list of reminders, precise instructions will be elsewhere.
 
