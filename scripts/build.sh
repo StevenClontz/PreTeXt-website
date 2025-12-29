@@ -14,7 +14,7 @@
 # See paths.sh.template, copy to paths.sh and edit
 # "dot" syntax is POSIX for "source"
 # Alternatives: http://stackoverflow.com/questions/192292
-DIR="$(dirname "$0")"
+DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 . ${DIR}/paths.sh
 
 echo ${DIR}
