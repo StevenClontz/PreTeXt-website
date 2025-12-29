@@ -25,7 +25,7 @@ Our [documentation](documentation.html) has information on getting started, usin
 
 ### Get Involved
 
-We strive to make PreTeXt a welcoming and supportive [community](community.html).
+We strive to make PreTeXt a welcoming and supportive [community](community.html).  See this page for ways you can get support or report problems.
 
 ### Code
 

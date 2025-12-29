@@ -15,15 +15,17 @@ The primary "forums" for PreTeXt are hosted through Google Groups.  The support 
 - [pretext-dev](https://groups.google.com/forum/#!forum/pretext-dev). Discussions about features and implementation.
 - [pretext-a11y](https://groups.google.com/forum/#!forum/pretext-a11y). Accessibility discussions.
 
+GitHub issues are reserved for confirmed bugs, or new features, that have first been discussed on Google Groups.
+
 ## Social media
 
 A number of PreTeXt users and developers are active on Bluesky, look for [#PreTeXtGang](https://bsky.app/hashtag/PreTeXtGang).
 
 Also check out the [MathTech.org Discord Server](https://mathtech.org/chat) which has channels for PreTeXt and related projects.
 
-## Zoom "office hours"
+## Zoom "Drop-In" Office Hours
 
-Most weeks we host multiple zoom drop-in office hours to help newcomers and discuss new features and development.  Days and times are announced on the [pretext-announce](https://groups.google.com/forum/#!forum/pretext-announce) group and listed at our [calendar](https://mathtech.org/events/)
+Most weeks we host multiple Zoom drop-in office hours to help newcomers, and to discuss new features and development.  Days and times are announced on the [pretext-announce](https://groups.google.com/forum/#!forum/pretext-announce) group and listed at our [calendar](https://mathtech.org/events/)
 
 ## GitHub
 
@@ -33,5 +35,5 @@ Contributions, including issues and pull requests, are welcome for the various P
 - [PreTeXt-CLI](https://github.com/PreTeXtBook/pretext-cli)
 - [PreTeXt-Tools](https://github.com/PreTeXtBook/pretext-tools)
 
-Most of the time it is preferable to discuss ideas on the Google Groups prior to submitting issues/pull requests through github.
+Most of the time it is preferable to discuss ideas on the Google Groups prior to submitting issues or pull requests through GitHub.
 
