@@ -28,11 +28,11 @@ Look for the [regularly updated sample article](https://pretextbook.org/examples
 
 ### RELAX-NG Schema
 
-A [RELAX-NG Schema](https://en.wikipedia.org/wiki/RELAX_NG) is a formal specification of the tags and attributes of an XML vocabulary, and the relationships among them. So this is the very heart of PreTeXt, as everything else begins here. You can read the documented version, find various versions in the [schema](https://github.com/PreTeXtBook/pretext/tree/master/schema/) directory, or use the convenient online browsing interface listed third below.
+A [RELAX-NG Schema](https://en.wikipedia.org/wiki/RELAX_NG) is a formal specification of the tags and attributes of an XML vocabulary, and the relationships among them. So this is the very heart of PreTeXt, as everything else begins here. You can read the documented version, find various versions in the [schema](https://github.com/PreTeXtBook/pretext/tree/master/schema/) directory, or use the convenient online browsing interface developed by [Jason Siefken](https://github.com/siefkenj/pretext-book) and other contributors.  (Visit the "All Tags" section for a comprehenive list of elements.)
 
 - [PreTeXt Schema Documentation (HTML)](https://pretextbook.org/doc/schema-litprog/html/)
 - [PreTeXt Schema Documentation (PDF)](https://pretextbook.org/doc/schema-litprog/pretext.pdf)
-- [Online PreTeXt Schema Browser](https://pretextbook.org/doc/schema/)
+- [Online PreTeXt Schema Browser](https://siefkenj.github.io/pretext-book/docs/reference/essential-concepts.html)
 - [RELAX-NG, Compact Syntax](https://github.com/PreTeXtBook/pretext/tree/master/schema/pretext.rnc)
 - [W3C XSD Syntax](https://github.com/PreTeXtBook/pretext/tree/master/schema/pretext.xsd)
 
