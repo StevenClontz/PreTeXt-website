@@ -115,6 +115,9 @@ declare LTL=${REPOS}/LaTeX3LaTeX
 # PreTeXt Projects repository
 declare PP=${REPOS}/pretext-projects
 
+# Git for Authors
+declare GFA=${REPOS}/gfa
+
 
 #####################
 # Directory Locations
@@ -206,6 +209,16 @@ if [ "${1}" != "local" ] ; then
 	echo "BUILD: PreTeXt Projects repository update :BUILD"
 	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 	cd ${PP}
+	git checkout master
+	git pull
+fi
+
+# Git for Authors, master branch of *public* repository
+if [ "${1}" != "local" ] ; then
+	echo
+	echo "BUILD: Git for Authors repository update :BUILD"
+	echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+	cd ${GFA}
 	git checkout master
 	git pull
 fi
