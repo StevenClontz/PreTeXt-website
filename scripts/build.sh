@@ -437,9 +437,8 @@ if [ "${1}" != "local" ] ; then
 	# "notify-send" only works on Linux
 	# printf "\a" is portable, but a bit unreliable
 	notify-send "PreTeXt build script commplete.  Waiting for rsync password..." --urgency=critical
-	${RSYNC} ${STAGED}/*  utmost@pretextbook.org:/home/utmost/www/pretextbook.org/htdocs/beta/test-site
-	# looks good for use with live version
-	# ${RSYNC} ${STAGED}/*  utmost@pretextbook.org:/home/utmost/www/pretextbook.org/htdocs
+
+	${RSYNC} ${STAGED}/*  utmost@pretextbook.org:/home/utmost/www/pretextbook.org/htdocs
 fi
 
 ####################
