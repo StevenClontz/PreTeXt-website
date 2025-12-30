@@ -20,8 +20,6 @@ The PreTeXt Guide is the very best place to learn about the PreTeXt vocabulary a
 
 Begin with the [Introduction](https://pretextbook.org/doc/guide/html/part-introduction.html) to [The PreTeXt Guide](https://pretextbook.org/doc/guide/html).
 
-[Démarrer avec PreTeXt](https://juliengiol.github.io/dap) est un guide de démarrage rapide en Français pour Mac et Windows.
-
 ### Sample Article
 
 While the PreTeXt Guide is evolving, the sample article tries to contain one example of everything, along with some commentary about use. So it can be used for testing and as a substitute for real documentation. But it is kept up-to-date so is always an accurate reflection of current behavior. So while it can look like a real mess, you can still learn from it.
