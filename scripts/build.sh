@@ -278,6 +278,16 @@ ${PTXPTX} -v -c doc -f pdf -d ${DOCOUT}/schema-litprog -p ${SLP}/publication.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${DOCOUT}/schema-litprog/html -p ${SLP}/publication.xml ${SLP}/pretext.xml
 
+# Git for Authors
+echo
+echo "BUILD: creating Git for Authors :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d ${DOCOUT}/gfa/html
+# PDF
+${PTXPTX} -v -c doc -f pdf -d ${DOCOUT}/gfa -p ${GFA}/publication/publication.ptx ${GFA}/src/gfa.xml
+# HTML
+${PTXPTX} -v -c doc -f html -d ${DOCOUT}/gfa/html -p ${GFA}/publication/publication.ptx ${GFA}/src/gfa.xml
+
 ##########
 # Examples
 ##########
