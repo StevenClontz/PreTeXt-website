@@ -145,7 +145,7 @@ declare WW=${PTX}/examples/webwork/sample-chapter
 declare G=${PTX}/doc/guide
 declare ES=${PTX}/examples/epub
 declare SLP=${PTX}/schema
-declare LANDING=${DIR}/../site
+declare PELICAN=${DIR}/../site
 
 ###############
 # Overall Setup
@@ -232,7 +232,7 @@ fi
 echo
 echo "BUILD: creating landing pages with Pelican :BUILD"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-cd ${LANDING}
+cd ${PELICAN}
 pelican . -o ${STAGED} -s ./pelican_settings.py
 
 # Catalog Frame/Page
