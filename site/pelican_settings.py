@@ -23,4 +23,6 @@ AUTHOR_FEED_RSS = None
 ARCHIVES_SAVE_AS = None
 CATEGORIES_SAVE_AS = None
 TAGS_SAVE_AS = None
-
+MARKDOWN = {
+    'extensions': ['markdown.extensions.attr_list']
+}

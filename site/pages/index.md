@@ -15,9 +15,9 @@ Open Source: GPL license
 
 PreTeXt has been used to create a large number of Open Educational Resources.
 
-The [Gallery](https://pretextbook.org/gallery.html) is a small collection of mature PreTeXt projects that demonstrate the range of features and the diversity of subjects.
+The [Gallery](gallery.html) is a small collection of mature PreTeXt projects that demonstrate the range of features and the diversity of subjects.
 
-The [Catalog](https://pretextbook.org/catalog.html) is a comprehensive list of PreTeXt projects. You can get a sense of the possibilities, and where authors have public source, you can look to see how certain constructions are authored.
+The [Catalog](gallery.html#catalog) is a comprehensive list of PreTeXt projects. You can get a sense of the possibilities, and where authors have public source, you can look to see how certain constructions are authored.
 
 ### Starting Out
 
