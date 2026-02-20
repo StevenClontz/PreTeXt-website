@@ -1,6 +1,6 @@
-title: Documentation
+title: The PreTeXt Guide
 URL:
-save_as: documentation.html
+save_as: guide.html
 
 
 The PreTeXt Guide is the very best place to learn about the PreTeXt vocabulary and the associated project and community. It contains a basic introduction and parts for authors, publishers and developers, in addition to a reference section of common constructions.

@@ -1,3 +1,16 @@
+:root {
+    --color-bg: hsl(60, 9%, 90%);
+    --color-text: hsl(0, 0%, 15%);
+    --color-header: hsl(20, 20%, 10%);
+    --color-header-text: hsl(0, 0%, 100%);
+    --color-header-link-hover: hsl(20, 20%, 65%);
+    --color-footer-link: hsl(20, 20%, 65%);
+    --color-footer-link-hover: hsl(20, 20%, 80%);
+    --color-link: hsl(165, 80%, 25%);
+    --color-link-hover: hsl(165, 90%, 40%);
+}
+
+
 
 /* standard elements */
 html {min-height: 100%;}
@@ -8,8 +21,8 @@ html {min-height: 100%;}
     box-sizing: border-box;
 }
 
-a {color: #048;}
-a:hover {color: #06C;}
+a {color: var(--color-link);}
+a:hover {color: var(--color-link-hover);}
 
 
 
@@ -18,8 +31,8 @@ p,code,ul {padding-bottom: 1.2em;}
 li {list-style: none;}
 
 h1 {font: normal 1.8em Tahoma,sans-serif;}
-h2 {font: bold 1.4em sans-serif;}
-h3 {font: bold 1em Tahoma,sans-serif;}
+h2 {font: bold 1.5em sans-serif;}
+h3 {font: bold 1.2em Tahoma,sans-serif;}
 
 form,input {margin: 0; padding: 0; display: inline;}
 
@@ -27,7 +40,7 @@ code {
     background: #FFF;
     border: 1px solid #EEE;
     border-left: 6px solid #CCC;
-    color: #666;
+    color: hsl(0, 0%, 40%);
     display: block;
     font: normal 1em Tahoma,sans-serif;
     line-height: 1.6em;
@@ -43,7 +56,10 @@ blockquote {
     padding-left: 28px;
 }
 
-h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
+h1,h2,h3 {
+    padding-top: 6px;
+    color: var(--color-header);
+    margin-bottom: 4px;}
 
 
 /*structure
@@ -58,19 +74,19 @@ h1,h2,h3 {padding-top: 6px; color: #553; margin-bottom: 4px;}
 
 
 body {
-    background-color: hsl(60, 9%, 90%);
-    color: #444;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     font: normal 100% Tahoma,sans-serif;
 }
 
 main {
-    background:  hsl(60, 9%, 90%) url(../images/body.jpg) no-repeat center top;
+    background:  var(--color-bg) url(../images/body.jpg) no-repeat center top;
     padding-top: 24px;
 }
 
 main article.content {
     background: white;
-    box-shadow: 0px 0px 10px 0px hsl(60 9% 54%);
+    box-shadow: 0px 0px 10px 0px hsl(60, 9%, 54%);
     margin: 40px auto;
 }
 
@@ -85,23 +101,27 @@ header {
 header.header {
     padding-left: 3%;
     padding-right: 3%;
-    background: hsl(60, 2%, 13%);
+    background: var(--color-header);
     /*height: 140px;*/
     text-align: left;
 }
 .header .title {
-    color: #FFF;
+    color: var(--color-header-text);
     padding: 20px;
 }
 .header .title a {
-    color: #FFF;
+    color: var(--color-header-text);
     font: bold 3em monospace, sans-serif;
     text-decoration: none;
 }
-.header .title a:hover {color:hsl(0, 0%, 73%);}
+.header .title a:hover {
+    color: var(--color-header-link-hover);
+    text-decoration: none;
+    font-weight: bold;
+}
 
 .header .navbar {
-    color: #FFF;
+    color: var(--color-header-text);
     font: normal 1.4em monospace, sans-serif;
     margin-right: 10px;
     text-align: right;
@@ -119,7 +139,7 @@ header.header {
 }
 
 .navbar a {
-    color: #FFF;
+    color: var(--color-header-text);
     padding: 5px 10px 5px 10px;
     margin: 0;
     text-decoration: none;
@@ -127,9 +147,10 @@ header.header {
 }
 
 .navbar a:hover {
-    color: hsl(0, 0%, 73%);
+    color: var(--color-header-link-hover);
+    font-weight: bold;
     text-decoration: none;
-    background-color: #444;
+    /*background-color: hsl(0, 0%, 25%);*/
 }
 
 /* Hamburger menu button */
@@ -146,7 +167,7 @@ header.header {
 .navbar-toggle span {
     width: 25px;
     height: 3px;
-    background-color: #FFF;
+    background-color: var(--color-header-text);
     margin: 5px 0;
     transition: 0.3s;
     border-radius: 2px;
@@ -214,19 +235,19 @@ header.header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: hsl(60, 20%, 13%);
-    color: #ffffff;
+    background: var(--color-header);
+    color: var(--color-header-text);
     font: normal .75em monospace, sans-serif;
     margin-top: 5px;
     padding: 10px 12px;
 }
 .footer a {
-    color: #F7F7F2;
+    color: var(--color-footer-link);
     text-decoration: none;
 }
-.footer a:hover {color: #FFC;}
-.footer .right, .footer .right a {color: #C8C8C3;}
-.footer .right a:hover {color: #F7F7F2;}
+.footer a:hover {color: var(--color-footer-link-hover);}
+.footer .right, .footer .right a {color: var(--color-footer-text);}
+.footer .right a:hover {color: var(--color-footer-link-hover);}
 
 @media screen and (max-width: 800px) {
     main {
@@ -257,7 +278,7 @@ header.header {
         left: 0;
         right: 0;
         width: 100%;
-        background: hsl(60, 2%, 13%);
+        background: hsl(25, 25%, 15%);
         box-shadow: 0 6px 16px rgba(0,0,0,0.3);
         border-top: 1px solid #444;
         z-index: 1000;

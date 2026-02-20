@@ -2,13 +2,14 @@ title: Write Once, Read Anywhere
 URL:
 save_as: index.html
 
-PreTeXt is an authoring and publishing system for authors of textbooks, research articles, and monographs, especially in STEM disciplines, with a strong focus on accessibility.
+Welcome! We're glad you are here.
 
-The best of DocBook, LaTeX, and HTML.
+PreTeXt is an authoring and publishing system for authors of textbooks, course materials, research articles, and monographs, especially in STEM disciplines, with a strong focus on accessibility.
 
-Outputs: print, PDF, web, EPUB, slideshows, Jupyter Notebooks, braille, …
+Documents written in PreTeXt can be automatically converted to accessible HTML, PDF, EBUP, RevealJS slideshow, Jupyter notebooks, and even Braille.
 
-Open Source: GPL license
+
+
 
 
 ### Gallery and Catalog
