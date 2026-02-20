@@ -51,7 +51,8 @@ But it is cutting-edge and contains new features before they make it into the Au
 
 - [Sample Article, Online](examples/sample-article/html)
 - [Sample Article, Annotated](examples/sample-article/annotated)
-- [Sample Article, PDF](examples/sample-article/sample-article.pdf)
+- [Sample Article, Electronic PDF (one-sided)](examples/sample-article/sample-article.pdf)
+- [Sample Article, Print PDF (two-sided)](examples/sample-article/sample-article-print.pdf)
 - [Sample Article, Source at GitHub](https://github.com/PreTeXtBook/pretext/tree/master/examples/sample-article)
 
 ### WeBWorK Sample Chapter
