@@ -297,8 +297,10 @@ echo
 echo "BUILD: creating sample article :BUILD"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 install -d ${EXAMPLESOUT}/sample-article/html
-# PDF
+# PDF - electronic
 ${PTXPTX} -v -c doc -f pdf -d ${EXAMPLESOUT}/sample-article -p ${SA}/publication.xml ${SA}/sample-article.xml
+# PDF - print, with outfile name change
+${PTXPTX} -v -c doc -f pdf -o ${EXAMPLESOUT}/sample-article/sample-article-print.pdf -p ${SA}/publication-print.xml ${SA}/sample-article.xml
 # HTML
 ${PTXPTX} -v -c doc -f html -d ${EXAMPLESOUT}/sample-article/html -p ${SA}/publication.xml ${SA}/sample-article.xml
 
