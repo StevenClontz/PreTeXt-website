@@ -6,20 +6,20 @@ Welcome! We're glad you are here.
 
 <div class="cta-cards-container">
   <div class="cta-card">
-    <h3>⚡ Quick Start</h3>
-    <p>Get started with PreTeXt in minutes. Create your first document and explore the basics.</p>
-    <a href="quick-start.html">Get Started</a>
-  </div>
-
-  <div class="cta-card">
     <h3>✨ Why PreTeXt</h3>
     <p>Discover the powerful features and benefits that make PreTeXt the ideal choice for authors.</p>
     <a href="why-pretext.html">Learn More</a>
   </div>
 
   <div class="cta-card">
+    <h3>⚡ Quick Start</h3>
+    <p>Get started with PreTeXt in minutes. Create your first document and explore the basics.</p>
+    <a href="quick-start.html">Get Started</a>
+  </div>
+
+  <div class="cta-card">
     <h3>🤝 Get Help</h3>
-    <p>Connect with our community, ask questions, and get support from experienced PreTeXt users.</p>
+    <p>Connect with our community, ask questions, and get help from experienced PreTeXt users.</p>
     <a href="support.html">Get Support</a>
   </div>
 </div>
@@ -40,13 +40,13 @@ The [Gallery](gallery.html) is a small collection of mature PreTeXt projects tha
 
 The [Catalog](gallery.html#catalog) is a comprehensive list of PreTeXt projects. You can get a sense of the possibilities, and where authors have public source, you can look to see how certain constructions are authored.
 
-### Starting Out
+### Documentation
 
-Our [documentation](documentation.html) has information on getting started, using all the many features of PreTeXt, and additional resources.
+The [PreTeXt Guide](guide.html) has information on getting started, using all the many features of PreTeXt, and additional resources.
 
 ### Get Involved
 
-We strive to make PreTeXt a welcoming and supportive [community](community.html).  See this page for ways you can get support or report problems.
+We strive to make PreTeXt a welcoming and supportive [community](support.html).  See this page for ways you can get support or report problems.
 
 ### Code
 
