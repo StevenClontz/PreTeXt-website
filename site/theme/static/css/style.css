@@ -180,10 +180,9 @@ header.header {
 }
 .header .logo {
     padding: 3px;
-    height: 5em;
+    height: 75px;
     background-color: white;
-    border: 1px solid hsl(20, 9%, 90%);
-    border-radius: 8px;
+    border-radius: 3px;
 }
 
 .header .navbar {
