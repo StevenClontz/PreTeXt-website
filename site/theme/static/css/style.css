@@ -179,8 +179,11 @@ header.header {
     font-weight: bold;
 }
 .header .logo {
-    padding: 20px;
+    padding: 3px;
     height: 5em;
+    background-color: white;
+    border: 1px solid hsl(20, 9%, 90%);
+    border-radius: 8px;
 }
 
 .header .navbar {
