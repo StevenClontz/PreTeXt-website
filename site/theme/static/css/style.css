@@ -310,6 +310,11 @@ header.header {
 .footer .right, .footer .right a {color: var(--color-footer-text);}
 .footer .right a:hover {color: var(--color-footer-link-hover);}
 
+/* Gallery poster images */
+.posters {padding-bottom:30px;}
+.posterbox {height:180px; width:150px; display:inline-block; text-align:center;}
+.poster {height:100%; width:auto;}
+
 @media screen and (max-width: 800px) {
     main {
         padding: 0;

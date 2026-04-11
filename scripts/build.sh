@@ -227,27 +227,23 @@ fi
 # Landing pages #
 #################
 
-# Build the landing pages from the site directory using Pelican
-# This should be run from the `site`` directory of the `pretext-website` repository
+# Gallery and Catalog page, generated from pretext-projects data.
+# Produces an HTML file with Pelican metadata, placed where Pelican
+# can process it as a page (the "generated" content directory).
+echo
+echo "BUILD: creating Gallery and Catalog page :BUILD"
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+install -d ${PELICAN}/generated
+xsltproc -o ${PELICAN}/generated/gallery.html --xinclude ${PP}/xsl/gallery-catalog-html.xsl ${PP}/src/projects.xml
+
+# Build the landing pages from the site directory using Pelican.
+# This should be run from the "site" directory of the "pretext-website" repository.
+# Pelican picks up both "pages" and "generated" directories (see pelican_settings.py).
 echo
 echo "BUILD: creating landing pages with Pelican :BUILD"
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 cd ${PELICAN}
 pelican . -o ${STAGED} -s ./pelican_settings.py
-
-# Catalog Frame/Page
-echo
-echo "BUILD: creating PreTeXt Catalog page :BUILD"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-install -d ${STAGED}/frames
-xsltproc -o ${STAGED}/frames/catalog-frame.html -xinclude ${PP}/xsl/projects-html.xsl ${PP}/src/projects.xml
-
-# Gallery Frame/Page
-echo
-echo "BUILD: creating PreTeXt Gallery page :BUILD"
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
-install -d ${STAGED}/frames
-xsltproc -o ${STAGED}/frames/gallery-frame.html -xinclude ${PP}/xsl/gallery-html.xsl ${PP}/src/projects.xml
 
 # N.B. if you only want to build the site's web pages for testing
 # purposes and local viewing, then uncomment the "exit" command below
@@ -449,6 +445,9 @@ fi
 
 echo
 echo "Build script complete"
+
+# Always clean up generated content directory within site source
+rm -rf ${PELICAN}/generated
 
 # DEBUG unset is empty string, test (-z) is true, remove temp directories
 if [[ -z "${DEBUG:-}" ]]; then

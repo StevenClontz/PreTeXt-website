@@ -8,7 +8,7 @@ STATIC_PATHS = ["examples", "doc"]
 
 RELATIVE_URLS = True
 TIMEZONE = "America/Los_Angeles"
-PAGE_PATHS = ["pages"]
+PAGE_PATHS = ["pages", "generated"]
 ARTICLE_PATHS = ["updates"]
 ARTICLE_URL = "updates/{date:%Y%m%d}-{slug}.html"
 ARTICLE_SAVE_AS = "updates/{date:%Y%m%d}-{slug}.html"
