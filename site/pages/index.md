@@ -13,9 +13,9 @@ Welcome! We're glad you are here.
 
   <div class="cta-card">
     <h3>⚡ Quick Start</h3>
-    <p>Get started now in your browser with PreTeXt.Plus, or <a href="quick-start.html">Get Started</a> with
-    a local install.</p>
-    <a href="https://pretext.plus/tryit" class="button">Try PreTeXt.Plus</a>
+    <p>Get started now in your browser with <a href="https://pretext.plus/tryit" target="_blank">PreTeXt.Plus</a>,
+    or <a href="quick-start.html">quickly get started</a> with a local install.</p>
+    <a href="https://pretext.plus/tryit" class="button" target="_blank">Try it Online</a>
   </div>
 
   <div class="cta-card">
